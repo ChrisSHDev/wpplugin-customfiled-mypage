@@ -19,11 +19,7 @@ function wpcfmypage_settings_page_markup()
     if( !current_user_can('manage_options')){
         return;
     }
-    ?>
-        <div class="wrap">
-            <h1><?php esc_html_e( get_admin_page_title() ); ?></h1>
-            <p><?php esc_html_e( 'Some Contents!!', 'wpcfmypage' );  ?></p>
-        </div>
-    <?php
+
+    include( ACFMAPUGIN_DIR . 'templates/admin/settings-page.php' );
 }
 

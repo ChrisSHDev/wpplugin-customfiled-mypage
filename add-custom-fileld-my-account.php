@@ -12,10 +12,13 @@ if( !defined( 'WPINC' )){
 }
 
 define( 'ACFMAPUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'ACFMAPUGIN_DIR', plugin_dir_path( __FILE__ ));
 
 include( plugin_dir_path( __FILE__ ) . 'includes/plugin-styles.php');
 
 include( plugin_dir_path( __FILE__ ) . 'includes/plugin-menus-setting.php');
+
+include( plugin_dir_path( __FILE__ ) . 'includes/plugin-options.php');
 
 function myplugin_add_settings_link( $links ) {
     $settings_link = '<a href="admin.php?page=wpcfmypage">' . __( 'Settings' ) . '</a>';
@@ -23,4 +26,5 @@ function myplugin_add_settings_link( $links ) {
     return $links;
 }
 $filter_name = "plugin_action_links_" . plugin_basename( __FILE__ );
+
 add_filter($filter_name, 'myplugin_add_settings_link');
