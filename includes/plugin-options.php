@@ -2,17 +2,16 @@
 
 function plugin_options() {
 
-    if( !get_option( 'plugin_option' ) ){
-        add_option( 'plugin_option', 'My New Plugin Options' );
+    $options = [];
+    $options[ 'name' ] = 'Chris Lee';
+    $options[ 'location' ] = 'Vancouver, BC';
+    $options[ 'Job' ] = 'Web Developer';
+
+    if( !get_option( 'plugin_option_1' ) ){
+        add_option( 'plugin_option_1', $options );
     }
 
-    update_option( 'plugin_option', 'My Updated Plugin Options 1' );
-
-    if( !get_option( 'plugin_option_name' ) ){
-        add_option( 'plugin_option_name', 'Chris' );
-    }
-
-    update_option( 'plugin_option_name', 'Chris' );
+    update_option( 'plugin_option_1', $options );
 
 
 }

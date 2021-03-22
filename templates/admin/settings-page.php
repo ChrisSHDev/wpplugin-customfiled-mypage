@@ -20,4 +20,21 @@
       <li>plugin_dir_url( __FILE__ ) - <?php echo $wpplugin_plugin_dir_url; ?></li>
     </ul>
 
+    <h1><?php esc_html_e( get_admin_page_title()); ?></h1>
+    <h2><?php esc_html_e( 'All Options', 'plugin_option_1') ?></h2>
+
+    <?php $options = get_option( 'plugin_option_1' ); ?>
+    <ul>
+    <?php foreach( $options as $option ): ?>
+      <li><?php echo $option; ?></li>
+    <?php endforeach; ?>
+    </ul>
+
+    <?php if( array_key_exists( 'name', $options ) ): ?>
+
+      <h2><?php esc_html_e( 'Specific Option', 'wpcfmypage' ) ?></h2>
+      <p><?php esc_html_e( $options['name'] ); ?></p>
+
+    <?php endif; ?>
+
 </div>
