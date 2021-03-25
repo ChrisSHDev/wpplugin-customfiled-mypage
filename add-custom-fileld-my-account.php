@@ -18,9 +18,9 @@ include( plugin_dir_path( __FILE__ ) . 'includes/plugin-styles.php');
 
 include( plugin_dir_path( __FILE__ ) . 'includes/plugin-menus-setting.php');
 
-include( plugin_dir_path( __FILE__ ) . 'includes/plugin-options.php');
-
 include( plugin_dir_path( __FILE__ ) . 'includes/plugin-settings-fields.php');
+
+include( plugin_dir_path( __FILE__ ) . 'includes/plugin-my-account-setting.php');
 
 function myplugin_add_settings_link( $links ) {
     $settings_link = '<a href="admin.php?page=wpcfmypage">' . __( 'Settings' ) . '</a>';
