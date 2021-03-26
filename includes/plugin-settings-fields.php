@@ -15,7 +15,7 @@ function plugin_settings() {
 
     add_settings_field(
         'wpcfmypage_settings_column_name',
-        __( 'Custom Text', 'wpcfmypage'),
+        __( 'Tab Label', 'wpcfmypage'),
         'wpcfmypage_settings_custom_text_callback',
         'wpcfmypage',
         'wpcfmypage_settings_section'
@@ -23,7 +23,7 @@ function plugin_settings() {
 
     add_settings_field(
         'wpcfmypage_settings_column_description',
-        __( 'Text Area', 'wpcfmypage' ),
+        __( 'Tab Description', 'wpcfmypage' ),
         'wpcfmypage_settings_textarea_callback',
         'wpcfmypage',
         'wpcfmypage_settings_section'
@@ -48,12 +48,12 @@ function wpcfmypage_settings_custom_text_callback(){
     
     $options = get_option( 'wpcfmypage_settings' );
 
-    $custom_text = '';
-    if( isset( $options[ 'custom_text' ])){
-        $custom_text = esc_html( $options['custom_text']);
+    $tab_label = '';
+    if( isset( $options[ 'tab_label' ])){
+        $tab_label = esc_html( $options['tab_label']);
     }
 
-    echo '<input type="text" id="wpcfmypage_customtext" name="wpcfmypage_settings[custom_text]" value="' . $custom_text . '" />';
+    echo '<input type="text" id="wpcfmypage_tab_label" name="wpcfmypage_settings[tab_label]" value="' . $tab_label . '" />';
 
 }
 
@@ -61,11 +61,11 @@ function wpcfmypage_settings_textarea_callback() {
 
     $options = get_option( 'wpcfmypage_settings' );
 
-    $textarea = '';
-    if( isset( $options[ 'textarea' ])){
-        $textarea = esc_html( $options[ 'textarea' ]);
+    $tab_description = '';
+    if( isset( $options[ 'tab_description' ])){
+        $tab_description = esc_html( $options[ 'tab_description' ]);
     }
 
-    echo '<textarea id="wpcfmypage_settings_textarea" name="wpcfmypage_settings[textarea]" rows="5" cols="50">' . $textarea . '</textarea>';
+    echo '<textarea id="wpcfmypage_settings_tab_description" name="wpcfmypage_settings[tab_description]" rows="5" cols="80">' . $tab_description . '</textarea>';
 
 }
