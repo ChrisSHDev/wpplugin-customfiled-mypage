@@ -2,7 +2,7 @@
 
 $options = get_option( 'wpcfmypage_settings' );
 $new_tab_name = esc_html( $options['tab_label']);
-$new_tab_contents = esc_html( $options['tab_description']);
+$new_tab_contents = $options['tab_description'];
 $tab_url = formatUrl($new_tab_name, $sep='-');
  
 function new_tab_endpoint() {
@@ -51,3 +51,13 @@ function new_tab_content() {
 $new_endpoint_hook = 'woocommerce_account_' . $tab_url . '_endpoint';
 
 add_action($new_endpoint_hook, 'new_tab_content' );
+
+add_action('admin_enqueue_scripts', 'codemirror_enqueue_scripts');
+ 
+function codemirror_enqueue_scripts($hook) {
+  $cm_settings['codeEditor'] = wp_enqueue_code_editor(array('type' => 'text/css'));
+  wp_localize_script('jquery', 'cm_settings', $cm_settings);
+ 
+  wp_enqueue_script('wp-theme-plugin-editor');
+  wp_enqueue_style('wp-codemirror');
+}

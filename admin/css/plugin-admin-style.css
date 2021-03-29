@@ -1,3 +1,7 @@
-.wrap{
+.CodeMirror.cm-s-default.CodeMirror-wrap {
+    max-width: 800px;
+}
 
+input#wpcfmypage_tab_label {
+    width: 800px;
 }

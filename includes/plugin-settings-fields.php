@@ -8,7 +8,7 @@ function plugin_settings() {
 
     add_settings_section(
         'wpcfmypage_settings_section',
-        __( 'Plugin Settings Section', 'wpcfmypage'),
+        __( 'This Plugin Allows User To Add Cutom Tab To Woocommerrce My Account Page ', 'wpcfmypage'),
         'wpcfmypage_settings_section_callback',
         'wpcfmypage'
     );
@@ -40,7 +40,7 @@ add_action( 'admin_init', 'plugin_settings' );
 
 function wpcfmypage_settings_section_callback() {
 
-    esc_html_e('Plugin settings section description', 'wpcfmypage');
+    echo esc_html__('After save this page You must go to setting permalinks page and click "Save Changes" Button ', 'wpcfmypage');
 
 }
 
@@ -66,6 +66,6 @@ function wpcfmypage_settings_textarea_callback() {
         $tab_description = esc_html( $options[ 'tab_description' ]);
     }
 
-    echo '<textarea id="wpcfmypage_settings_tab_description" name="wpcfmypage_settings[tab_description]" rows="5" cols="80">' . $tab_description . '</textarea>';
+    echo '<textarea id="fancy-textarea" name="wpcfmypage_settings[tab_description]" rows="5" cols="80">' . $tab_description . '</textarea>';
 
 }

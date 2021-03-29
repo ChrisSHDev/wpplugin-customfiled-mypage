@@ -16,6 +16,8 @@ define( 'ACFMAPUGIN_DIR', plugin_dir_path( __FILE__ ));
 
 include( plugin_dir_path( __FILE__ ) . 'includes/plugin-styles.php');
 
+include( plugin_dir_path( __FILE__ ) . 'includes/plugin-scripts.php');
+
 include( plugin_dir_path( __FILE__ ) . 'includes/plugin-menus-setting.php');
 
 include( plugin_dir_path( __FILE__ ) . 'includes/plugin-settings-fields.php');

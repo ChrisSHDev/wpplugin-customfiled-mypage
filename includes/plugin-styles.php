@@ -26,3 +26,4 @@ function plugin_frontend_styles() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'plugin_frontend_styles', 100);
+
